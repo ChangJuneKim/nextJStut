@@ -1,7 +1,5 @@
 import React from 'react';
 
 export default function ProductsPage() {
-    return (
-        <div>상품페이지</div>
-    );
+  return <div>상품페이지</div>;
 }

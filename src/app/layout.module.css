@@ -2,6 +2,6 @@
   @apply flex;
 }
 
-.nav li{
+.nav li {
   @apply p-0 px-2;
 }
