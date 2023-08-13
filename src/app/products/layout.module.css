@@ -1,0 +1,11 @@
+.nav {
+  @apply border-[1px] border-red-500 px-6 py-3 mt-2;
+}
+
+.nav ul {
+  @apply flex;
+}
+
+.nav li {
+  @apply mr-3;
+}

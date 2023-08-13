@@ -1,0 +1,7 @@
+.nav ul {
+  @apply flex;
+}
+
+.nav li{
+  @apply p-0 px-2;
+}

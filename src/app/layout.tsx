@@ -1,6 +1,7 @@
+import type {Metadata} from 'next'
 import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import styles from './layout.module.css'
+import {Inter} from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +16,19 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning={true}>
+      <body className={inter.className}>
+        <header className="flex justify-between items-center p-2 border-b-[1px] border-b-blue-950">
+          <h1>Demo Note App</h1>
+          <nav className={styles.nav}>
+            <ul>
+              <li><a href="">Contact</a></li>
+              <li><a href="">About</a></li>
+            </ul>
+          </nav>
+        </header>
+        {children}
+      </body>
     </html>
   )
 }
