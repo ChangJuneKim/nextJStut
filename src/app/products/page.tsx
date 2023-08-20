@@ -1,16 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import { getProducts } from '@/service/products';
 
-const products = ['shirts', 'pants', 'skirt', 'shoes'];
-export default function ProductsPage() {
+export default async function ProductsPage() {
+  const products = await getProducts();
+
   return (
     <>
       <h1>제품 소개 페이지!</h1>
       <ul>
-        {products.map((product) => {
+        {products.map(({ id, name, price }) => {
           return (
-            <li key={product}>
-              <Link href={`/products/${product}`}>{product}</Link>
+            <li key={id}>
+              <Link href={`/products/${id}`}>
+                {name}: {price}원
+              </Link>
             </li>
           );
         })}
