@@ -1,4 +1,4 @@
-import Counter from '@/components/counter';
+import Counter from '@/components/Counter';
 
 export default function Home() {
   console.log('서버 컴포넌트 - homepage');

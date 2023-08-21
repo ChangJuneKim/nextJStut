@@ -9,9 +9,10 @@ type Props = {
   };
 };
 
-export function generateMetadata({ params }: Props): Metadata {
+export async function generateMetadata({ params: { slug } }: Props): Promise<Metadata> {
+  const product = await getProduct(slug);
   return {
-    title: `제품의 이름: ${params.slug}`,
+    title: `제품의 이름: ${product?.name}`,
   };
 }
 
