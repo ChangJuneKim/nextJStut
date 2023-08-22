@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { getProduct, getProducts } from '@/service/products';
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
+import GoProductsButton from '@/components/GoProductsButton';
 
 type Props = {
   params: {
@@ -28,6 +29,7 @@ export default async function ProductPage({ params: { slug } }: Props) {
     <>
       <h1>{product.name} 제품 설명 페이지</h1>
       <Image src={`/images/${product.image}`} alt={product.name} width={400} height={400} />
+      <GoProductsButton />
     </>
   );
 }
